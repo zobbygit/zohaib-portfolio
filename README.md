@@ -490,6 +490,6 @@ those are Zohaib's own content.
 <div align="center">
 
 Built by **Zohaib Aslam** — [GitHub](https://github.com/zobbygit) ·
-[Portfolio](https://your-deployed-url-here) 
+[Portfolio](https://zohaib-portfolio-eta-seven.vercel.app) 
 
 </div>
