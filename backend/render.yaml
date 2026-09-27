@@ -1,0 +1,33 @@
+# Render Blueprint (Infrastructure as Code): https://render.com/docs/blueprint-spec
+# Import this repo in Render, pick "Blueprint", and it will read this file to
+# scaffold the service and its environment variable slots (values still need to
+# be filled in by hand in the Render dashboard — this file never holds secrets).
+services:
+  - type: web
+    name: zohaib-portfolio-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: CORS_ORIGINS
+        sync: false # set to your deployed Vercel URL(s), comma-separated, no trailing slash
+      - key: MONGODB_URI
+        sync: false # from MongoDB Atlas
+      - key: JWT_SECRET
+        sync: false # 32+ random characters — generate with: openssl rand -hex 32
+      - key: CONTACT_RATE_LIMIT_PER_HOUR
+        value: 5
+      - key: EMAILJS_SERVICE_ID
+        sync: false
+      - key: EMAILJS_TEMPLATE_ID
+        sync: false
+      - key: EMAILJS_PUBLIC_KEY
+        sync: false
+      - key: EMAILJS_PRIVATE_KEY
+        sync: false

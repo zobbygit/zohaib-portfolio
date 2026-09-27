@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-sizing: border-box;
+  --body-bg: radial-gradient(ellipse at 50% -10%, #10182c 0%, #05070d 55%, #030409 100%);
+  --nav-bg: rgba(5, 7, 13, 0.7);
+  --wipe-bg: #05070d;
+}
+
+/* Light theme: a warm, carefully designed alternate environment, not white-on-black
+ * inverted. Scoped to shared chrome (body, nav, route wipe) for now — most page
+ * content still assumes the dark palette; see the README for what's not yet covered. */
+[data-theme="light"] {
+  color-scheme: light;
+  --body-bg: radial-gradient(ellipse at 50% -10%, #f3efe6 0%, #e9e2d3 55%, #ded4bd 100%);
+  --nav-bg: rgba(243, 239, 230, 0.75);
+  --wipe-bg: #f3efe6;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background: #05070d;
+  color: #fff;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* No grid. Depth comes from the 3D world, lighting, and negative space instead. */
+  background: var(--body-bg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, input, textarea, select, [role="button"] { cursor: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
