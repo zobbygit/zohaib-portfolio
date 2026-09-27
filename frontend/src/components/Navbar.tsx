@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, Moon, Sun, X } from "lucide-react";
-import { navItems, profile } from "../data/profile";
+import { Menu,  X } from "lucide-react";
+import { navItems,profile } from "../data/profile";
 import { navDescriptions } from "../data/navMap";
 // import { useTheme } from "../lib/ThemeContext";
 
