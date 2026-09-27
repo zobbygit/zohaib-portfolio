@@ -19,7 +19,13 @@ const loginLimiter = rateLimit({
 });
 
 const loginSchema = z.object({ email: z.string().email().max(120), password: z.string().min(1).max(200) });
-const cookieOptions = { httpOnly: true, sameSite: "strict" as const, secure: env.NODE_ENV === "production", maxAge: 8 * 60 * 60 * 1000, path: "/" };
+const cookieOptions = {
+  httpOnly: true,
+  sameSite: "none" as const,
+  secure: env.NODE_ENV === "production",
+  maxAge: 8 * 60 * 60 * 1000,
+  path: "/",
+};
 
 authRouter.post("/login", loginLimiter, async (req, res, next) => {
   try {
