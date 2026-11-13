@@ -19,7 +19,7 @@ export default function ResumePage() {
           </h1>
         </div>
         <a
-          href="/resume.pdf"
+          href="/Zohaib_Cv.pdf"
           download="Zohaib-Aslam-Resume.pdf"
           data-cursor="view"
           className="rounded-full bg-white px-6 py-3 font-mono text-xs tracking-widest text-ink transition hover:bg-accent"
@@ -30,16 +30,16 @@ export default function ResumePage() {
 
       <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-navy/30">
         {!embedFailed ? (
-          <object data="/resume.pdf" type="application/pdf" className="h-[80vh] w-full" onError={() => setEmbedFailed(true)}>
+          <object data="/Zohaib_Cv.pdf" type="application/pdf" className="h-[80vh] w-full" onError={() => setEmbedFailed(true)}>
             <p className="p-8 text-center text-white/70">
               Your browser can&apos;t preview the PDF inline.{" "}
-              <a href="/resume.pdf" download className="text-accent underline">Download it instead</a>.
+              <a href="/Zohaib_Cv.pdf" download className="text-accent underline">Download it instead</a>.
             </p>
           </object>
         ) : (
           <p className="p-8 text-center text-white/70">
             Preview unavailable in this browser.{" "}
-            <a href="/resume.pdf" download className="text-accent underline">Download the PDF</a>.
+            <a href="/Zohaib_Cv.pdf" download className="text-accent underline">Download the PDF</a>.
           </p>
         )}
       </div>
